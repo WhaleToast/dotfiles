@@ -1,0 +1,26 @@
+# Ignore everything by default
+/*
+
+# Allow only selected files and folders
+!.zshrc
+!.gitignore
+!.config/
+!.config/nvim/
+!.config/kitty/
+
+# Re-ignore noisy subdirs inside allowed folders
+.config/gtk-3.0/
+.config/gtk-4.0/
+.config/spotify/
+.config/discord/
+
+# Never track:
+.cache/
+.local/
+.asdf/
+.vscode/
+Downloads/
+Documents/
+Videos/
+Music/
+Pictures/
