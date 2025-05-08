@@ -1,0 +1,3 @@
+#!/bin/sh
+grim -g "$(slurp -w 0)" | tee ~/Pictures/screenshot_$(date +%s).png | wl-copy
+
