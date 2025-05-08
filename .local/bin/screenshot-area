@@ -1,3 +1,2 @@
 #!/bin/sh
-grim -g "$(slurp -w 0)" | tee ~/Pictures/screenshot_$(date +%s).png | wl-copy
-
+grim -g "$(slurp)" /dev/stdout | tee ~/Pictures/screenshot_$(date +%s).png | /usr/bin/wl-copy 
