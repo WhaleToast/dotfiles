@@ -25,3 +25,4 @@ Videos/
 Music/
 Pictures/
 .config/kitty/kitty-themes
+.config/nvim/lazy-lock.json
