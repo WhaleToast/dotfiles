@@ -23,7 +23,16 @@ return {
       group_empty = true,
     },
     filters = {
-      dotfiles = true,
+      dotfiles = false,
+      git_ignored = false,
+    },
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+    },
+    git = {
+      enable = true,
+      ignore = false,
     },
   },
 }

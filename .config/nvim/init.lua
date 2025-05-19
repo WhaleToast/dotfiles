@@ -30,7 +30,7 @@ keymap("v", "<leader>c", '"+y', opts)
 -- Save / Quit
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
-keymap("n", "<leader>x", ":wq<CR>", opts)
+keymap("n", "<leader>x", ":q!<CR>", opts)
 
 -- Move to start/end of line
 keymap("n", "H", "^", opts)
@@ -69,7 +69,15 @@ keymap("n", "<A-Right>", "<Cmd>wincmd l<CR>", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>f", ":NvimTreeFindFile<CR>", opts)
+-- keymap("n", "<leader>f", ":NvimTreeFindFile<CR>", opts)
+
+vim.keymap.set("n", "<leader>f", function ()
+  local api = require("nvim-tree.api")
+  local path = vim.fn.expand("%:p:h")
+  api.tree.open()
+  api.tree.change_root(path)
+  api.tree.find_file({ open = true, focus = true})
+end)
 
 -- Move Lines
 -- Normal mode: move current line up or down
