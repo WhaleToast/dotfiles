@@ -1,3 +1,4 @@
+-- Open nvim-tree when starting without args
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     if vim.fn.argc() == 0 then
@@ -38,6 +39,16 @@ keymap("n", "L", "$", opts)
 -- Select all
 keymap("n", "<C-a>", "ggVG", opts)
 
+-- NvimTreeOpen to open specific directory
+keymap("n", "<leader>d", function()
+  local input = vim.fn.input("Directory: ", "", "dir")
+  if inut ~= "" then
+    require("nvim-tree.api").tree.open({ path = input })
+  end
+end)
+
+-- Show lsp float 
+keymap("n", "m", vim.diagnostic.open_float)
 -- Clear search highlight
 keymap("n", "<leader><space>", ":nohlsearch<CR>", opts)
 
