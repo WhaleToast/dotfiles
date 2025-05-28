@@ -149,3 +149,10 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- Move splits
+vim.keymap.set("n", "<C-Left>", "<C-w>H", { desc = "Move window to left" })
+vim.keymap.set("n", "<C-Down>", "<C-w>J", { desc = "Move window to bottom" })
+vim.keymap.set("n", "<C-Up>", "<C-w>K", { desc = "Move window to top" })
+vim.keymap.set("n", "<C-Right>", "<C-w>L", { desc = "Move window to right" })
+
