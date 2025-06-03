@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo wondershaper -c -a wlp5s0
+echo Speed limit removed
