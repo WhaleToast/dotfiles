@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background: rgba(1, 124, 165, 0.5);
+    background: rgba(2, 62, 82, 0.8);
     color: #c0caf5;
     font-family: 
         SpaceMono Nerd Font,
@@ -30,8 +30,11 @@ window#waybar {
 .modules-center {
     padding: 0 10px;
 }
-
+#arch{
+  padding-right: 5px;
+}
 #clock,
+#tray,
 #battery,
 #cpu{
   padding: 2px;

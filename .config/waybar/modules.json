@@ -4,8 +4,8 @@
         "tooltip": true,
         "tooltip-format": "btw"
     },
-
-
+    "tray":{},
+    
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
