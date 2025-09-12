@@ -21,7 +21,7 @@ window#waybar {
 {
     /* background: rgba(0, 0, 8, .5); */
     margin: 5px 20px;
-    padding: 0 5px;
+    padding: 0 0;
     border-radius: 0px;
 }
 .modules-left {
@@ -39,6 +39,15 @@ window#waybar {
 #cpu{
   padding: 2px;
 }
+#custom-mouse-battery {
+    margin-top: 0px;
+    padding: 0 5px;
+    border-radius: 0px;
+}
+
+#custom-mouse-battery:hover {
+    background-color: #6273b5;
+}
 #memory,
 #disk,
 #temperature,
@@ -54,7 +63,7 @@ tray,
 #power-profiles-daemon,
 #language,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     border-radius: 0px;
 }
 

@@ -5,7 +5,12 @@
         "tooltip-format": "btw"
     },
     "tray":{},
+   "custom/mouse-battery":{
+        "exec": "solaar show | grep -A 1 'Battery:' | tail -2 | awk '{print $2}' | tr -d ','",
+        "format": "󰍽  {}",
+        "interval": 300
     
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -43,14 +48,14 @@
         "on-click": "pavucontrol"
     },
     "network": {
-        "format-wifi": "    ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "interface": "wlp5s0",
+        "format-wifi": "    ({signalStrength}%) {bandwidthUpBits} ↑ {bandwidthDownBits} ↓",
+        "format-ethernet": "{ipaddr}/{cidr} {bandwidthUpBits} ↑ {bandwidthDownBits} ↓",
+        "tooltip-format": "{ifname} via {gwaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-	"on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
-	 
-    },
+        "interval": 5
+},
     "cpu": {
         "format": "  {usage}%",
         "tooltip": true
