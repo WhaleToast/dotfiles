@@ -1,6 +1,6 @@
 eval "$(ssh-agent -s)"   
 ssh-add ~/.ssh/github
-setop CORRECT
+# setop CORRECT
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # export VISUAL="gedit"
