@@ -5,17 +5,17 @@
         "tooltip-format": "btw"
     },
     "tray":{},
-   "custom/mouse-battery":{
+    "custom/mouse-battery":{
         "exec": "solaar show | grep -A 1 'Battery:' | tail -2 | awk '{print $2}' | tr -d ','",
-        "format": "󰍽  {}",
+        "format": "󰍽 {}",
         "interval": 300
-    
+
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "{icon} {name}",
         "format-icons": {
             "urgent": "",
             "active": "",
@@ -29,13 +29,10 @@
             "deactivated": ""
         }
     },
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon} {volume}%  {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
+    "pulseaudio#main": {
+        "format": "{format_source}",
+        "format-source": "{icon}  {volume}%",
+        "format-muted": "  {format_source}",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -45,24 +42,70 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Main"]
     },
+    "pulseaudio#music": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "  {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["main_audio"]
+    },
+    "custom/audio-main": {
+        "exec": "pactl get-sink-volume 'main_audio' | grep -oP '\\d+(?=%)' | head -1",
+        "interval": 1,
+        "format": "󰋋  {}%",
+        "on-click": "pactl set-sink-mute 'main_audio' toggle",
+        "on-scroll-up": "pactl set-sink-volume 'main_audio' +5%",
+        "on-scroll-down": "pactl set-sink-volume 'main_audio' -5%",
+        "tooltip": false,
+        "format-icons": {
+            "default": ["", "", ""]
+
+        }
+    },
+
+    "custom/audio-music": {
+        "exec": "pactl get-sink-volume 'music_audio' | grep -oP '\\d+(?=%)' | head -1",
+        "interval": 1, 
+        "format": "󰝚  {}%",
+        "on-click": "pactl set-sink-mute 'music_audio' toggle",
+        "on-scroll-up": "pactl set-sink-volume 'music_audio' +5%",
+        "on-scroll-down": "pactl set-sink-volume 'music_audio' -5%",
+        "tooltip": false
+    },
+
     "network": {
         "interface": "wlp5s0",
-        "format-wifi": "    ({signalStrength}%) {bandwidthUpBits} ↑ {bandwidthDownBits} ↓",
+        "format-wifi": "({signalStrength}%) {bandwidthUpBits} ↑ {bandwidthDownBits} ↓",
         "format-ethernet": "{ipaddr}/{cidr} {bandwidthUpBits} ↑ {bandwidthDownBits} ↓",
-        "tooltip-format": "{ifname} via {gwaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format": "{ifname}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
+        "interval": 5,
+        "tooltip": true,
+        "max-length": 30,
+        "max-width": 10
+
+    },
+    "custom/cpu": {
+        "exec": "top -bn1 | grep \"Cpu(s)\" | sed \"s/.*, *\\([0-9.]*\\)%* id.*/\\1/\" | awk '{printf \"%.0f\", 100 - $1}'",
+        "format": "  {}%",
+        "tooltip": false,
         "interval": 5
-},
-    "cpu": {
-        "format": "  {usage}%",
-        "tooltip": true
     },
     "memory": {
         "format": "  {used:0.1f}GB",
-	"tooltip": true
+        "tooltip": false
     },
     "temperature": {
         "interval": 10,
@@ -72,12 +115,12 @@
         "format": " {temperatureC}°C"
     },
     "hyprland/language": {
-       "format": "  {}",
-       "format-en": "EN",
-       "format-ru": "RU"
+        "format": "  {}",
+        "format-en": "EN",
+        "format-ru": "RU"
     },  
     "clock": {
-        "format": "{:%H:%M | %e %B} ",
+        "format": "{:%H:%M | %e} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     }
