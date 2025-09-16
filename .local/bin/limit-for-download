@@ -1,4 +1,0 @@
-#!/bin/bash
-sudo wondershaper -c -a wlp5s0
-sudo wondershaper -a wlp5s0 -d 300000 -u 300000 
-echo Speed changed to 30MB/s
