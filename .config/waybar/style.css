@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-  background: transparent;
+  background-color: rgba(35, 35, 36, 0.4);
   font-family: 
     JetBrainsMonoNL Nerd Font;
   transition: background-color .5s;
@@ -18,25 +18,36 @@ window#waybar {
 {
   margin: 0px;
   padding: 0 5px;
-  border-radius: 0;
-  background-color: #76A7F4;
-  color: black;
+  color: white;
+  border-radius: 25px;
+  background-color: #16243b;
+  border-bottom: solid #979998 2px;
+
+
 }
 .modules-center {
   margin: 0px;
   padding: 0 10px;
-  border-radius: 0;
-  background-color: #76A7F4;
-  color: black;
+  color: white;
+  border-radius: 25px;
+  border-bottom: solid #979998 2px;
+  background-color: #16243b;
+
   font-weight: normal;
 
 }
 
-.modules-right
+.modules-right {
+  border-radius: 25;
+  background-color: #16243b;
+  padding: 0 10px;
+  border-bottom: solid #979998 2px;
+
+}
 
 
 #clock {
-  color: black;
+  color: white;
   padding: 0 10px;
 }
 
@@ -48,41 +59,8 @@ window#waybar {
 #memory,
 #network {
   padding: 0 5;
-  border-radius: 0;
+  border-radius: 0px;
   margin: 0 0px;
-}
-#memory {
-  color: black;
-  background-color: #CDC9F8;
-}
-#custom-cpu {
-  color: black;
-  background-color: #C9B7F5;
-
-}
-#network {
-  color: black;
-  background-color: #C4A5F3;
-}
-
-#custom-audio-music {
-  color: black;
-  background-color: #9A89E6;
-}
-
-#custom-audio-main {
-  color: black;
-  background-color: #6071D7;
-}
-
-#custom-mouse-battery {
-  color: black;
-  background-color: #6B8CE6;
-}
-
-#tray {
-  color: black;
-  background-color: #76A7F4;
 }
 
 #workspaces button {
@@ -90,16 +68,17 @@ window#waybar {
   font-family:
     SpaceMono Nerd Font,
     feather;
-  font-weight: 900;
+  font-weight: normal;
   font-size: 13pt;
   border:none;
   border-radius: 0px;
-  color: black;
+  color: white;
 }
 
 #workspaces button.active {
-  background: #59b1dc; 
-  border-radius: 5px;
+  font-weight: 900;
+  font-size: 16pt;
+  color: #00bd42;
 }
 
 #workspaces button:hover {

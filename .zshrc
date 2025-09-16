@@ -5,11 +5,11 @@ export MANPAGER="nvim +Man!"
 export SYSTEMD_EDITOR=/usr/bin/nvim
 export PATH=$PATH:/home/sollkre/.local/bin
 
-source $ZSH/oh-my-zsh.sh
 
 ZSH_THEME="darkblood"
 
 plugins=(git zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
 
 alias cls="clear"
 alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
