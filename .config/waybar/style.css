@@ -18,14 +18,14 @@ window#waybar {
 {
   margin: 0px;
   padding: 0 5px;
-  border-radius: 5px;
+  border-radius: 0;
   background-color: #76A7F4;
   color: black;
 }
 .modules-center {
   margin: 0px;
   padding: 0 10px;
-  border-radius: 5px;
+  border-radius: 0;
   background-color: #76A7F4;
   color: black;
   font-weight: normal;
