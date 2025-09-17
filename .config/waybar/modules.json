@@ -19,7 +19,7 @@
         "format-icons": {
             "urgent": "",
             "active": "",
-            "default": "<span color='#29a2f2'></span>"
+            "default": ""
         }
     },
     "idle_inhibitor": {
