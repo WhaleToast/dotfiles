@@ -1,6 +1,6 @@
 -- leader key
+local vim = vim
 vim.g.mapleader = " "
-
 -- keymap options
 local opts = { noremap = true, silent = true}
 local keymap = vim.keymap.set
@@ -9,6 +9,9 @@ local keymap = vim.keymap.set
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
 keymap("n", "<leader>x", ":q!<CR>", opts)
+
+-- neogit open
+keymap("n", "<leader>ng", ":Neogit<CR>", opts)
 
 -- yank to clipboard
 keymap("n", "<leader>c", '"+y', opts)
